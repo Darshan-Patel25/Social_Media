@@ -22,6 +22,7 @@ import SignIn from "homepage/components/SignIn";
 import SignUp from "homepage/components/SignUp";
 import About from "homepage/components/AboutUs/About";
 import HowItWorks from "homepage/components/HowItWorks";
+import Pricing from "homepage/components/Pricing";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -38,6 +39,7 @@ function App() {
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/aboutus" element={<About />} />
+             <Route path='/pricing' element={<Pricing />} />
             <Route path="/howitworks" element={<HowItWorks />} />
 
             {/* Protected routes inside Layout */}

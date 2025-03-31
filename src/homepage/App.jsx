@@ -5,6 +5,7 @@ import Home from './components/Home'
 import SignUp from './components/SignUp';
 import About from './components/AboutUs/About';
 import HowItWorks from './components/HowItWorks';
+import Pricing from './components/Pricing';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/signin" element={<SignIn />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/aboutus' element={<About />} />
+          <Route path='/pricing' element={<Pricing />} />
           <Route path='/howitworks' element={<HowItWorks />} />
         
         </Routes>
