@@ -3,43 +3,46 @@ import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 import { useTheme } from "@mui/material/styles";
 
 const data = [
-  { name: "Category A", value: 400 },
-  { name: "Category B", value: 300 },
-  { name: "Category C", value: 300 },
-  { name: "Category D", value: 200 },
+  { name: "Instagram", value: 10500 },
+  { name: "YouTube", value: 8400 },
+  { name: "Twitter", value: 5600 },
+  { name: "Facebook", value: 7200 },
 ];
 
 const CustomPieChart = () => {
   const theme = useTheme();
 
   const themeColors = [
-    theme.palette.neutral.main, // Category A
-    theme.palette.secondary.main, // Category B
-    theme.palette.error.main, // Category C
-    theme.palette.warning.main, // Category D
+    theme.palette.secondary.main,   // Instagram
+    theme.palette.primary.main,     // YouTube
+    theme.palette.warning.main,     // Twitter
+    theme.palette.success.main,     // Facebook
   ];
 
   return (
     <div className="flex flex-col items-center w-full">
-      <h2 className="text-base font-medium text-[theme(colors.primary.main)] mb-1">
-        Pie Chart
+      <h2 className="text-lg font-semibold text-gray-700 mb-2">
+        Social Media Engagement Breakdown
       </h2>
-      <PieChart width={250} height={250}>
+      <PieChart width={300} height={300}>
         <Pie
           data={data}
           cx="50%"
           cy="50%"
-          innerRadius={50}
-          outerRadius={90}
+          innerRadius={60}
+          outerRadius={100}
           paddingAngle={3}
           dataKey="value"
         >
-          {data.map((_, index) => (
-            <Cell key={`cell-${index}`} fill={themeColors[index % themeColors.length]} />
+          {data.map((entry, index) => (
+            <Cell
+              key={`cell-${index}`}
+              fill={themeColors[index % themeColors.length]}
+            />
           ))}
         </Pie>
-        <Tooltip />
-        <Legend fontSize={10} />
+        <Tooltip formatter={(value) => `${value.toLocaleString()} engagements`} />
+        <Legend verticalAlign="bottom" height={36} />
       </PieChart>
     </div>
   );
