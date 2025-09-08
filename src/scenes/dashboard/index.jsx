@@ -8,11 +8,13 @@ import { FaInstagram, FaYoutube, FaTwitter, FaFacebook } from "react-icons/fa";
 import Barchart from "../../components/Barchart";
 import Piechart from "../../components/piechart2";
 import PostCard from "../../components/PostCard";
-
+import Suggestion from "components/Suggestion";
 
 const Dashboard = () => {
   const theme = useTheme();
   const isNonMediumScreens = useMediaQuery("(min-width: 1200px)");
+
+
 
   const iconStyle = {
     color: theme.palette.secondary[300],
@@ -24,8 +26,8 @@ const Dashboard = () => {
     <Box m="1rem 2rem">
       <FlexBetween>
         <Header
-          title={<Box display="flex" alignItems="center">Hello, Zenith👋</Box>}
-          subtitle="Stay on top of your social hive by creating and scheduling posts consistently."
+          title={<Box display="flex" alignItems="center">Welcome to Zenith</Box>}
+          subtitle="Overview of your social media performance."
         />
 
         <Button
@@ -107,8 +109,10 @@ const Dashboard = () => {
           sx={{ overflowY: "auto" }}
         >
           <Header title="All Posts" subtitle="Schedule posts" />
-          <Typography>No posts available.</Typography>
+          
           <PostCard />
+           <PostCard />
+            <PostCard />
         </Box>
 
         {/* Charts */}
@@ -127,6 +131,7 @@ const Dashboard = () => {
         </Box>
 
         <Box gridColumn="span 4" gridRow="span 2" backgroundColor={theme.palette.background.alt} p="1rem" borderRadius="0.55rem">
+          <Suggestion />
         </Box>
       </Box>
     </Box>

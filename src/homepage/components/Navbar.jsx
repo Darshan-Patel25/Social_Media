@@ -47,7 +47,7 @@ const Navbar = () => {
             <img src="./p2.jpeg" alt="Logo" className="h-14 w-14" />
           </NavLink>
           <div className="flex flex-col">
-            <span className="text-3xl font-bold text-[#456EC8]">Zenith</span>
+            <span className="text-3xl font-bold text-[#2e58ff]">Zenith</span>
             <span className="text-sm text-red-600 font-semibold">WE CAN MANAGE</span>
           </div>
         </div>
